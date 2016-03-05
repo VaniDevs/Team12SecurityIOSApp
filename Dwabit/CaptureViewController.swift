@@ -29,6 +29,7 @@ final class CaptureViewController: UIViewController {
         super.viewDidDisappear(animated)
         session.stopRunning()
     }
+    
 }
 
 // MARK: - Private Helper Functions
@@ -43,6 +44,6 @@ private extension CaptureViewController {
     }
     
     func captureImages() {
-
+        // TODO: do the 30 picture evidence stuff
     }
 }
