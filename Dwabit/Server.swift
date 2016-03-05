@@ -14,12 +14,23 @@ final class Server {
     
     private let firebaseRootRef = Firebase(url: "https://dwabit.firebaseio.com")
     
-    func sendFirebaseCoordinates(locationInfo: LocationInfo, forUser: String) {
+    private enum SubDirectories: String {
+        case UserInfo, DistressSignal
+    }
+    
+    func sendFirebaseCoordinates(locationInfo: DistressSignal) {
+        let distressRef = firebaseRootRef.childByAppendingPath(SubDirectories.DistressSignal.rawValue)
         let json = locationInfo.toJson()
-        firebaseRootRef.setValue(json)
+        distressRef.setValue(json)
     }
     
     func purgeFirebase() {
         firebaseRootRef.removeValue()
+    }
+    
+    func saveUserInfo(userInfo: UserInfo) {
+        let userInfoRef = firebaseRootRef.childByAppendingPath(SubDirectories.UserInfo.rawValue)
+        let currentUserRef = userInfoRef.childByAppendingPath("Meryl")
+        currentUserRef.setValue(userInfo.toJson())
     }
 }

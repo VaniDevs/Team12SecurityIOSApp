@@ -21,7 +21,6 @@ final class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
-        Server.sharedInstance.saveUserData(UserData.sampleUserData())
     }
 }
 
@@ -29,7 +28,7 @@ final class InitialViewController: UIViewController {
 extension InitialViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinates = locations.first?.coordinate else { fatalError() }
-        Server.sharedInstance.sendFirebaseCoordinates(LocationInfo(coordinates: coordinates), forUser: "Daryl")
+        Server.sharedInstance.sendFirebaseCoordinates(DistressSignal(coordinates: coordinates))
     }
 }
 

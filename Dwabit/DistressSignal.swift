@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-struct LocationInfo {
+struct DistressSignal {
     let longitude: Double
     let latitude: Double
     

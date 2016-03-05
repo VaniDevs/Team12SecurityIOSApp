@@ -14,10 +14,10 @@
 		60D0D9BB1C8B5A11005652ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D0D9B91C8B5A11005652ED /* LaunchScreen.storyboard */; };
 		60D0D9C61C8B5E7F005652ED /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9C51C8B5E7F005652ED /* InitialViewController.swift */; };
 		60D0D9C81C8B6101005652ED /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9C71C8B6101005652ED /* Server.swift */; };
-		60D0D9CC1C8B6FEA005652ED /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9CB1C8B6FEA005652ED /* UserData.swift */; };
-		60D0D9CE1C8B725F005652ED /* LocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9CD1C8B725F005652ED /* LocationInfo.swift */; };
+		60D0D9CE1C8B725F005652ED /* DistressSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9CD1C8B725F005652ED /* DistressSignal.swift */; };
 		60D0D9D01C8B8046005652ED /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9CF1C8B8046005652ED /* CaptureViewController.swift */; };
 		60D0D9D31C8B8138005652ED /* AVPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9D21C8B8138005652ED /* AVPreviewView.swift */; };
+		60D0D9F01C8B969D005652ED /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9EF1C8B969D005652ED /* UserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +31,10 @@
 		60D0D9BC1C8B5A11005652ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60D0D9C51C8B5E7F005652ED /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		60D0D9C71C8B6101005652ED /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		60D0D9CB1C8B6FEA005652ED /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		60D0D9CD1C8B725F005652ED /* LocationInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationInfo.swift; sourceTree = "<group>"; };
+		60D0D9CD1C8B725F005652ED /* DistressSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistressSignal.swift; sourceTree = "<group>"; };
 		60D0D9CF1C8B8046005652ED /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		60D0D9D21C8B8138005652ED /* AVPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPreviewView.swift; sourceTree = "<group>"; };
+		60D0D9EF1C8B969D005652ED /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		83E4BE40C9070787A12E4CA0 /* Pods_Dwabit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dwabit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,8 +129,8 @@
 		60D0D9CA1C8B6FDC005652ED /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				60D0D9CB1C8B6FEA005652ED /* UserData.swift */,
-				60D0D9CD1C8B725F005652ED /* LocationInfo.swift */,
+				60D0D9CD1C8B725F005652ED /* DistressSignal.swift */,
+				60D0D9EF1C8B969D005652ED /* UserInfo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -277,8 +277,8 @@
 				60D0D9B11C8B5A11005652ED /* AppDelegate.swift in Sources */,
 				60D0D9D01C8B8046005652ED /* CaptureViewController.swift in Sources */,
 				60D0D9C81C8B6101005652ED /* Server.swift in Sources */,
-				60D0D9CC1C8B6FEA005652ED /* UserData.swift in Sources */,
-				60D0D9CE1C8B725F005652ED /* LocationInfo.swift in Sources */,
+				60D0D9CE1C8B725F005652ED /* DistressSignal.swift in Sources */,
+				60D0D9F01C8B969D005652ED /* UserInfo.swift in Sources */,
 				60D0D9C61C8B5E7F005652ED /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
