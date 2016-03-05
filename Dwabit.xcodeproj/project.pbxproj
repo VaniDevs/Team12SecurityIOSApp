@@ -55,13 +55,37 @@
 			isa = PBXGroup;
 			children = (
 				60D0D9B01C8B5A11005652ED /* AppDelegate.swift */,
-				60D0D9B21C8B5A11005652ED /* ViewController.swift */,
-				60D0D9B41C8B5A11005652ED /* Main.storyboard */,
-				60D0D9B71C8B5A11005652ED /* Assets.xcassets */,
-				60D0D9B91C8B5A11005652ED /* LaunchScreen.storyboard */,
-				60D0D9BC1C8B5A11005652ED /* Info.plist */,
+				60D0D9C31C8B5DB6005652ED /* Controllers */,
+				60D0D9C21C8B5DA7005652ED /* Storyboards */,
+				60D0D9C41C8B5DBD005652ED /* Supporting Files */,
 			);
 			path = Dwabit;
+			sourceTree = "<group>";
+		};
+		60D0D9C21C8B5DA7005652ED /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				60D0D9B41C8B5A11005652ED /* Main.storyboard */,
+				60D0D9B91C8B5A11005652ED /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		60D0D9C31C8B5DB6005652ED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				60D0D9B21C8B5A11005652ED /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		60D0D9C41C8B5DBD005652ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				60D0D9B71C8B5A11005652ED /* Assets.xcassets */,
+				60D0D9BC1C8B5A11005652ED /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
