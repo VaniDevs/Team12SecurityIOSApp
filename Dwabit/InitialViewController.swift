@@ -9,22 +9,6 @@
 import UIKit
 import CoreLocation
 
-struct LocationInfo {
-    let longitude: Double
-    let latitude: Double
-    
-    init(coordinates: CLLocationCoordinate2D) {
-        longitude = coordinates.longitude
-        latitude = coordinates.latitude
-    }
-    
-    func toJson() -> NSDictionary {
-        return [
-            "longitude": "\(longitude)",
-            "latitude": "\(latitude)"
-        ]
-    }
-}
 
 final class InitialViewController: UIViewController {
     private let locationManager = CLLocationManager()
@@ -37,6 +21,7 @@ final class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
+        Server.sharedInstance.saveUserData(UserData.sampleUserData())
     }
 }
 
@@ -44,7 +29,7 @@ final class InitialViewController: UIViewController {
 extension InitialViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinates = locations.first?.coordinate else { fatalError() }
-        Server.sharedInstance.sendFirebaseCoordinates(LocationInfo(coordinates: coordinates), forUser: "Meryl")
+        Server.sharedInstance.sendFirebaseCoordinates(LocationInfo(coordinates: coordinates), forUser: "Daryl")
     }
 }
 

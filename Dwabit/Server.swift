@@ -15,10 +15,8 @@ final class Server {
     private let firebaseRootRef = Firebase(url: "https://dwabit.firebaseio.com")
     
     func sendFirebaseCoordinates(locationInfo: LocationInfo, forUser: String) {
-        print("sending firebase coordinates")
-        let userRef = firebaseRootRef.childByAppendingPath(forUser)
         let json = locationInfo.toJson()
-        userRef.setValue(json)
+        firebaseRootRef.setValue(json)
     }
     
     func purgeFirebase() {
