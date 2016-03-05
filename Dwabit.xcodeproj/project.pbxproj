@@ -13,6 +13,7 @@
 		60D0D9B81C8B5A11005652ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D0D9B71C8B5A11005652ED /* Assets.xcassets */; };
 		60D0D9BB1C8B5A11005652ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D0D9B91C8B5A11005652ED /* LaunchScreen.storyboard */; };
 		60D0D9C61C8B5E7F005652ED /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9C51C8B5E7F005652ED /* InitialViewController.swift */; };
+		60D0D9C81C8B6101005652ED /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9C71C8B6101005652ED /* Server.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		60D0D9BA1C8B5A11005652ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60D0D9BC1C8B5A11005652ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60D0D9C51C8B5E7F005652ED /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		60D0D9C71C8B6101005652ED /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		83E4BE40C9070787A12E4CA0 /* Pods_Dwabit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dwabit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				60D0D9B01C8B5A11005652ED /* AppDelegate.swift */,
+				60D0D9C91C8B6105005652ED /* Server */,
 				60D0D9C31C8B5DB6005652ED /* Controllers */,
 				60D0D9C21C8B5DA7005652ED /* Storyboards */,
 				60D0D9C41C8B5DBD005652ED /* Supporting Files */,
@@ -102,6 +105,14 @@
 				60D0D9BC1C8B5A11005652ED /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60D0D9C91C8B6105005652ED /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				60D0D9C71C8B6101005652ED /* Server.swift */,
+			);
+			name = Server;
 			sourceTree = "<group>";
 		};
 		EF388F33ED0A9EEC89543CE2 /* Frameworks */ = {
@@ -235,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D0D9B11C8B5A11005652ED /* AppDelegate.swift in Sources */,
+				60D0D9C81C8B6101005652ED /* Server.swift in Sources */,
 				60D0D9C61C8B5E7F005652ED /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
