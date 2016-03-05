@@ -21,6 +21,9 @@ final class InitialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
+        
+        let userInfo = UserInfo(name: "Meryl", age: "32", gender: "Male", phone: "878-848-4838", sin: "213 3234 554", address: "1 Infinite Loop, Cupertino")
+        Server.sharedInstance.saveUserInfo(userInfo)
     }
 }
 

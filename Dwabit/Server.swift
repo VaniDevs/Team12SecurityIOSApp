@@ -9,19 +9,21 @@
 import Firebase
 
 final class Server {
+    private let username = "Meryl"
     static let sharedInstance = Server()
     private init() {}
     
     private let firebaseRootRef = Firebase(url: "https://dwabit.firebaseio.com")
     
     private enum SubDirectories: String {
-        case UserInfo, DistressSignal
+        case UserInfo, DistressSignals
     }
     
     func sendFirebaseCoordinates(locationInfo: DistressSignal) {
-        let distressRef = firebaseRootRef.childByAppendingPath(SubDirectories.DistressSignal.rawValue)
+        let distressRef = firebaseRootRef.childByAppendingPath(SubDirectories.DistressSignals.rawValue)
+        let userRef = distressRef.childByAppendingPath(username)
         let json = locationInfo.toJson()
-        distressRef.setValue(json)
+        userRef.setValue(json)
     }
     
     func purgeFirebase() {
