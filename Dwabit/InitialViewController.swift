@@ -38,7 +38,11 @@ extension InitialViewController: CLLocationManagerDelegate {
 // MARK: - @IBActions
 private extension InitialViewController {
     @IBAction func purgeFirebaseTapped(sender: AnyObject) {
-        Server.sharedInstance.purgeFirebase()
+//        Server.sharedInstance.purgeFirebase()
+    }
+    
+    @IBAction func cancelSignalTapped(sender: AnyObject) {
+        Server.sharedInstance.cancelDistressSignal()
     }
 }
 

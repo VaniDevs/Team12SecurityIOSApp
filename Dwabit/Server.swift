@@ -26,8 +26,10 @@ final class Server {
         userRef.setValue(json)
     }
     
-    func purgeFirebase() {
-        firebaseRootRef.removeValue()
+    func cancelDistressSignal() {
+        let distressRef = firebaseRootRef.childByAppendingPath(SubDirectories.DistressSignals.rawValue)
+        let userRef = distressRef.childByAppendingPath(username)
+        userRef.removeValue()
     }
     
     func saveUserInfo(userInfo: UserInfo) {

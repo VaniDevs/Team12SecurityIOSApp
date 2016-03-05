@@ -37,13 +37,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="44s-J5-6EW">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SH0-hC-GRY">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SH0-hC-GRY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
                                         <connections>
                                             <segue destination="j1U-fk-UPR" kind="embed" id="TM1-96-7hu"/>
                                         </connections>
                                     </containerView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKa-eh-nTY">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKa-eh-nTY">
                                         <rect key="frame" x="0.0" y="208" width="320" height="208"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -64,7 +64,11 @@
                                 <action selector="purgeFirebaseTapped:" destination="6UX-Zt-U9B" id="mwm-qw-M9Q"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="4Um-h4-imZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel Signal" id="4Um-h4-imZ">
+                            <connections>
+                                <action selector="cancelSignalTapped:" destination="6UX-Zt-U9B" id="ry5-99-hJm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="purgeFirebaseButton" destination="EpQ-Dw-6m9" id="Zx9-RP-GD0"/>
