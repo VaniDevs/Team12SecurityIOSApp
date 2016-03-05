@@ -18,7 +18,7 @@ struct LocationInfo {
         latitude = coordinates.latitude
     }
     
-    func toJson() -> [String: String] {
+    func toJson() -> NSDictionary {
         return [
             "longitude": "\(longitude)",
             "latitude": "\(latitude)"
@@ -28,6 +28,11 @@ struct LocationInfo {
 
 final class InitialViewController: UIViewController {
     private let locationManager = CLLocationManager()
+    private let debug = true
+    
+    @IBOutlet private var purgeFirebaseButton: UIBarButtonItem! { didSet {
+        if !debug { navigationItem.leftBarButtonItem = nil }
+    }}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +44,18 @@ final class InitialViewController: UIViewController {
 extension InitialViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinates = locations.first?.coordinate else { fatalError() }
-        Server.sharedInstance.sendFirebaseCoordinates(LocationInfo(coordinates: coordinates))
+        Server.sharedInstance.sendFirebaseCoordinates(LocationInfo(coordinates: coordinates), forUser: "Meryl")
     }
 }
 
+// MARK: - @IBActions
+private extension InitialViewController {
+    @IBAction func purgeFirebaseTapped(sender: AnyObject) {
+        Server.sharedInstance.purgeFirebase()
+    }
+}
+
+// MARK: - Private Helper Methods
 private extension InitialViewController {
     func setupLocationManager() {
         guard CLLocationManager.locationServicesEnabled() else { fatalError() }

@@ -36,8 +36,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fPX-Jq-GIV">
+                        <barButtonItem key="leftBarButtonItem" title="Purge Firebase Data" id="EpQ-Dw-6m9">
+                            <connections>
+                                <action selector="purgeFirebaseTapped:" destination="6UX-Zt-U9B" id="mwm-qw-M9Q"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="4Um-h4-imZ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="purgeFirebaseButton" destination="EpQ-Dw-6m9" id="Zx9-RP-GD0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJm-5w-41h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
