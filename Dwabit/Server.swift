@@ -13,4 +13,9 @@ final class Server {
     private init() {}
     
     private let firebaseRootRef = Firebase(url: "https://dwabit.firebaseio.com")
+    
+    func sendFirebaseCoordinates(locationInfo: LocationInfo) {
+        let json = locationInfo.toJson()
+        firebaseRootRef.setValue(json)
+    }
 }
