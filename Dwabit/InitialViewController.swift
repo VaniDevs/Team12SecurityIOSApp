@@ -59,6 +59,7 @@ private extension InitialViewController {
     
     @IBAction func cancelSignalTapped(sender: AnyObject) {
         Server.sharedInstance.cancelDistressSignal()
+        Server.sharedInstance.purgeImages()
     }
 }
 

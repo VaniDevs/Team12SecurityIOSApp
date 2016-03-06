@@ -43,6 +43,13 @@ final class Server {
         let userRef = distressImagesRef.childByAppendingPath(username)
         let autoRef = userRef.childByAutoId()
         
-        autoRef.setValue(distressImage.toJson())
+        autoRef.setValue(distressImage.imageString)
+    }
+    
+    func purgeImages() {
+        let distressImagesRef = firebaseRootRef.childByAppendingPath(SubDirectories.DistressImages.rawValue)
+        let userRef = distressImagesRef.childByAppendingPath(username)
+        
+        userRef.removeValue()
     }
 }

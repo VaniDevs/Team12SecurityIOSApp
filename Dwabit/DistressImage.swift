@@ -13,14 +13,7 @@ struct DistressImage {
     
     init(image: UIImage) {
         guard let imageData = UIImageJPEGRepresentation(image, 0.5) else { fatalError() }
-        guard let imageString = String(data: imageData, encoding: NSUTF8StringEncoding) else { fatalError() }
-        
-        self.imageString = imageString as String
-    }
-    
-    func toJson() -> NSDictionary {
-        return [
-            "imageString": imageString
-        ]
+        let base64String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength) as String
+        self.imageString = base64String
     }
 }
