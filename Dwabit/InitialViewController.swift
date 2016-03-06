@@ -17,12 +17,29 @@ final class InitialViewController: UIViewController {
         if !debug { navigationItem.leftBarButtonItem = nil }
     }}
     
+    @IBOutlet private var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
         
         let userInfo = UserInfo(name: "Meryl", age: "32", gender: "Male", phone: "878-848-4838", sin: "213 3234 554", address: "1 Infinite Loop, Cupertino")
         Server.sharedInstance.saveUserInfo(userInfo)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationViewController = segue.destinationViewController as! CaptureViewController
+        destinationViewController.delegate = self
+    }
+}
+
+// MARK: - CaptureViewDelegate
+extension InitialViewController: CaptureViewDelegate {
+    func imageCaptured(image: UIImage) {
+        imageView.image = image
+        
+        let distressImage = DistressImage(image: image)
+        Server.sharedInstance.sendDistressImages(distressImage)
     }
 }
 

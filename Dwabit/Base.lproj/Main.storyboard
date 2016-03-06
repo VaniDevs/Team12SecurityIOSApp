@@ -38,11 +38,14 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SH0-hC-GRY">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
                                         <connections>
                                             <segue destination="j1U-fk-UPR" kind="embed" identifier="CaptureImage" id="TM1-96-7hu"/>
                                         </connections>
                                     </containerView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H4A-sz-SPz">
+                                        <rect key="frame" x="0.0" y="208" width="320" height="208"/>
+                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -67,6 +70,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageView" destination="H4A-sz-SPz" id="RI9-L7-yrQ"/>
                         <outlet property="purgeFirebaseButton" destination="EpQ-Dw-6m9" id="Zx9-RP-GD0"/>
                     </connections>
                 </viewController>
@@ -79,19 +83,16 @@
             <objects>
                 <viewController id="j1U-fk-UPR" customClass="CaptureViewController" customModule="Dwabit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k9H-74-Wmj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ei8-Wt-vwU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oum-ty-HvE" customClass="AVPreviewView" customModule="Dwabit" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oc3-Q0-On6">
-                                        <rect key="frame" x="0.0" y="208" width="320" height="208"/>
-                                    </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -104,7 +105,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="Oc3-Q0-On6" id="Mm7-bh-23p"/>
                         <outlet property="previewView" destination="oum-ty-HvE" id="sMD-T4-RFR"/>
                     </connections>
                 </viewController>

@@ -21,7 +21,7 @@ final class CaptureViewController: UIViewController {
     private let output = AVCaptureStillImageOutput()
     private var input: AVCaptureDeviceInput!
     
-    @IBOutlet private var imageView: UIImageView!
+    var delegate: CaptureViewDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,9 +59,7 @@ private extension CaptureViewController {
             } else {
                 let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
                 guard let image = UIImage(data: data) else { fatalError() }
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.imageView.image = image
-                }
+                self.delegate.imageCaptured(image)
             }
         }
     }

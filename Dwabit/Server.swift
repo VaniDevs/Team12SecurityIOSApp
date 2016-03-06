@@ -16,7 +16,7 @@ final class Server {
     private let firebaseRootRef = Firebase(url: "https://dwabit.firebaseio.com")
     
     private enum SubDirectories: String {
-        case UserInfo, DistressSignals
+        case UserInfo, DistressSignals, DistressImages
     }
     
     func sendFirebaseCoordinates(locationInfo: DistressSignal) {
@@ -34,7 +34,15 @@ final class Server {
     
     func saveUserInfo(userInfo: UserInfo) {
         let userInfoRef = firebaseRootRef.childByAppendingPath(SubDirectories.UserInfo.rawValue)
-        let currentUserRef = userInfoRef.childByAppendingPath("Meryl")
+        let currentUserRef = userInfoRef.childByAppendingPath(username)
         currentUserRef.setValue(userInfo.toJson())
+    }
+    
+    func sendDistressImages(distressImage: DistressImage) {
+        let distressImagesRef = firebaseRootRef.childByAppendingPath(SubDirectories.DistressImages.rawValue)
+        let userRef = distressImagesRef.childByAppendingPath(username)
+        let autoRef = userRef.childByAutoId()
+        
+        autoRef.setValue(distressImage.toJson())
     }
 }

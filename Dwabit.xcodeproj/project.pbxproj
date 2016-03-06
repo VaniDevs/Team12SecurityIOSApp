@@ -18,6 +18,7 @@
 		60D0D9D01C8B8046005652ED /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9CF1C8B8046005652ED /* CaptureViewController.swift */; };
 		60D0D9D31C8B8138005652ED /* AVPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9D21C8B8138005652ED /* AVPreviewView.swift */; };
 		60D0D9F01C8B969D005652ED /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0D9EF1C8B969D005652ED /* UserInfo.swift */; };
+		60D0DA181C8BBB08005652ED /* DistressImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D0DA171C8BBB08005652ED /* DistressImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		60D0D9CF1C8B8046005652ED /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		60D0D9D21C8B8138005652ED /* AVPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPreviewView.swift; sourceTree = "<group>"; };
 		60D0D9EF1C8B969D005652ED /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		60D0DA171C8BBB08005652ED /* DistressImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistressImage.swift; sourceTree = "<group>"; };
 		83E4BE40C9070787A12E4CA0 /* Pods_Dwabit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dwabit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				60D0D9CD1C8B725F005652ED /* DistressSignal.swift */,
+				60D0DA171C8BBB08005652ED /* DistressImage.swift */,
 				60D0D9EF1C8B969D005652ED /* UserInfo.swift */,
 			);
 			name = Models;
@@ -275,6 +278,7 @@
 			files = (
 				60D0D9D31C8B8138005652ED /* AVPreviewView.swift in Sources */,
 				60D0D9B11C8B5A11005652ED /* AppDelegate.swift in Sources */,
+				60D0DA181C8BBB08005652ED /* DistressImage.swift in Sources */,
 				60D0D9D01C8B8046005652ED /* CaptureViewController.swift in Sources */,
 				60D0D9C81C8B6101005652ED /* Server.swift in Sources */,
 				60D0D9CE1C8B725F005652ED /* DistressSignal.swift in Sources */,
