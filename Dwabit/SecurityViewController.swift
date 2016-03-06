@@ -18,12 +18,13 @@ final class SecurityViewController: UIViewController {
     private let output = AVCaptureStillImageOutput()
     private var input: AVCaptureDeviceInput!
     
+    @IBOutlet private var previewView: AVPreviewView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
         
-        let userInfo = UserInfo(name: "Meryl", age: "32", gender: "Male", phone: "878-848-4838", sin: "213 3234 554", address: "1 Infinite Loop, Cupertino")
+        let userInfo = UserInfo(name: "Daryl", age: "32", gender: "Male", phone: "878-848-4838", sin: "213 3234 554", address: "1 Infinite Loop, Cupertino")
         Server.sharedInstance.saveUserInfo(userInfo)
         
         setupCamera()
@@ -44,7 +45,11 @@ final class SecurityViewController: UIViewController {
 extension SecurityViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let coordinates = locations.first?.coordinate else { fatalError() }
-        Server.sharedInstance.sendFirebaseCoordinates(DistressSignal(coordinates: coordinates, name: "Meyrl"))
+        Server.sharedInstance.sendFirebaseCoordinates(DistressSignal(coordinates: coordinates, name: "Meryl"))
+    }
+    
+    @IBAction func cancelRequestTapped(sender: AnyObject) {
+        
     }
 }
 
@@ -58,11 +63,12 @@ private extension SecurityViewController {
     }
     
     func setupCamera() {
-        input = try! AVCaptureDeviceInput(device: device)
+        input = try? AVCaptureDeviceInput(device: device)
         
         session.addInput(input)
         session.addOutput(output)
         session.sessionPreset = AVCaptureSessionPresetMedium
+        previewView.setSession(session)
     }
     
     func captureImages() {

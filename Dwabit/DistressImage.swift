@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 struct DistressImage {
     let imageString: String
@@ -15,5 +16,9 @@ struct DistressImage {
         guard let imageData = UIImageJPEGRepresentation(image, 0.5) else { fatalError() }
         let base64String = imageData.base64EncodedStringWithOptions(.Encoding64CharacterLineLength) as String
         self.imageString = base64String
+    }
+    
+    init(snapshot: FDataSnapshot) {
+        imageString = snapshot.value["image"] as! String
     }
 }

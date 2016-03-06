@@ -43,7 +43,7 @@ final class Server {
         let userRef = distressImagesRef.childByAppendingPath(username)
         let autoRef = userRef.childByAutoId()
         
-        autoRef.setValue(distressImage.imageString)
+        autoRef.setValue(["image": distressImage.imageString])
     }
     
     func purgeImages() {
