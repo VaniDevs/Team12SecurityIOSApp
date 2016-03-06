@@ -9,11 +9,10 @@
 import UIKit
 import CoreLocation
 
-
 final class InitialViewController: UIViewController {
     private let locationManager = CLLocationManager()
     private let debug = false
-    
+        
     @IBOutlet private var purgeFirebaseButton: UIBarButtonItem! { didSet {
         if !debug { navigationItem.leftBarButtonItem = nil }
     }}

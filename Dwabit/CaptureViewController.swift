@@ -9,6 +9,10 @@
 import AVFoundation
 import UIKit
 
+protocol CaptureViewDelegate {
+    func imageCaptured(image: UIImage)
+}
+
 final class CaptureViewController: UIViewController {
     @IBOutlet private var previewView: AVPreviewView!
     
@@ -17,7 +21,7 @@ final class CaptureViewController: UIViewController {
     private let output = AVCaptureStillImageOutput()
     private var input: AVCaptureDeviceInput!
     
-    private var images = [UIImage]()
+    @IBOutlet private var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,9 @@ final class CaptureViewController: UIViewController {
         session.stopRunning()
     }
     
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        captureImages()
+    }
 }
 
 // MARK: - Private Helper Functions
@@ -45,5 +52,17 @@ private extension CaptureViewController {
     
     func captureImages() {
         // TODO: do the 30 picture evidence stuff
+        guard let connection = output.connections.first as? AVCaptureConnection else { fatalError() }
+        output.captureStillImageAsynchronouslyFromConnection(connection) { buffer, error in
+            if let error = error {
+                fatalError("Error capturing image: \(error)")
+            } else {
+                let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
+                guard let image = UIImage(data: data) else { fatalError() }
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.imageView.image = image
+                }
+            }
+        }
     }
 }

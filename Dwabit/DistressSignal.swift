@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import UIKit
 
 struct DistressSignal {
     let longitude: Double
@@ -20,7 +21,7 @@ struct DistressSignal {
     func toJson() -> NSDictionary {
         return [
             "longitude": "\(longitude)",
-            "latitude": "\(latitude)"
+            "latitude": "\(latitude)",
         ]
     }
 }
