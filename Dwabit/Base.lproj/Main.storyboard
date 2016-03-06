@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-97" y="302"/>
         </scene>
-        <!--Initial View Controller-->
+        <!--Security View Controller-->
         <scene sceneID="cuQ-bZ-xna">
             <objects>
-                <viewController id="6UX-Zt-U9B" customClass="InitialViewController" customModule="Dwabit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6UX-Zt-U9B" customClass="SecurityViewController" customModule="Dwabit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uHU-9m-PiX"/>
                         <viewControllerLayoutGuide type="bottom" id="NAD-5L-kn1"/>
@@ -33,84 +33,13 @@
                     <view key="view" contentMode="scaleToFill" id="9Bg-dq-C6U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="44s-J5-6EW">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                                <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SH0-hC-GRY">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
-                                        <connections>
-                                            <segue destination="j1U-fk-UPR" kind="embed" identifier="CaptureImage" id="TM1-96-7hu"/>
-                                        </connections>
-                                    </containerView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H4A-sz-SPz">
-                                        <rect key="frame" x="0.0" y="208" width="320" height="208"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NAD-5L-kn1" firstAttribute="top" secondItem="44s-J5-6EW" secondAttribute="bottom" id="1Xy-JJ-M1h"/>
-                            <constraint firstAttribute="trailing" secondItem="44s-J5-6EW" secondAttribute="trailing" id="FhG-Gd-qvu"/>
-                            <constraint firstItem="44s-J5-6EW" firstAttribute="top" secondItem="uHU-9m-PiX" secondAttribute="bottom" id="Spl-cm-fvX"/>
-                            <constraint firstItem="44s-J5-6EW" firstAttribute="leading" secondItem="9Bg-dq-C6U" secondAttribute="leading" id="h67-Tw-I59"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="fPX-Jq-GIV">
-                        <barButtonItem key="leftBarButtonItem" title="Purge Firebase Data" id="EpQ-Dw-6m9">
-                            <connections>
-                                <action selector="purgeFirebaseTapped:" destination="6UX-Zt-U9B" id="mwm-qw-M9Q"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Cancel Signal" id="4Um-h4-imZ">
-                            <connections>
-                                <action selector="cancelSignalTapped:" destination="6UX-Zt-U9B" id="ry5-99-hJm"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="imageView" destination="H4A-sz-SPz" id="RI9-L7-yrQ"/>
-                        <outlet property="purgeFirebaseButton" destination="EpQ-Dw-6m9" id="Zx9-RP-GD0"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="fPX-Jq-GIV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJm-5w-41h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="284" y="302"/>
-        </scene>
-        <!--Capture View Controller-->
-        <scene sceneID="fd2-F4-8yq">
-            <objects>
-                <viewController id="j1U-fk-UPR" customClass="CaptureViewController" customModule="Dwabit" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="k9H-74-Wmj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ei8-Wt-vwU">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oum-ty-HvE" customClass="AVPreviewView" customModule="Dwabit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="208"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Ei8-Wt-vwU" secondAttribute="trailing" id="CAH-oS-aGF"/>
-                            <constraint firstItem="Ei8-Wt-vwU" firstAttribute="top" secondItem="k9H-74-Wmj" secondAttribute="top" id="g9y-Rf-dr2"/>
-                            <constraint firstItem="Ei8-Wt-vwU" firstAttribute="leading" secondItem="k9H-74-Wmj" secondAttribute="leading" id="l1g-9s-xE1"/>
-                            <constraint firstAttribute="bottom" secondItem="Ei8-Wt-vwU" secondAttribute="bottom" id="rR4-px-0HW"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="previewView" destination="oum-ty-HvE" id="sMD-T4-RFR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YOO-bg-VKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="670" y="302"/>
         </scene>
     </scenes>
 </document>

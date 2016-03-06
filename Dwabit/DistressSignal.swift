@@ -12,16 +12,19 @@ import UIKit
 struct DistressSignal {
     let longitude: Double
     let latitude: Double
+    let name: String
     
-    init(coordinates: CLLocationCoordinate2D) {
+    init(coordinates: CLLocationCoordinate2D, name: String) {
         longitude = coordinates.longitude
         latitude = coordinates.latitude
+        self.name = name
     }
     
     func toJson() -> NSDictionary {
         return [
             "longitude": "\(longitude)",
             "latitude": "\(latitude)",
+            "name": "\(name)"
         ]
     }
 }
