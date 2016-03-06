@@ -49,7 +49,7 @@ extension SecurityViewController: CLLocationManagerDelegate {
     }
     
     @IBAction func cancelRequestTapped(sender: AnyObject) {
-        
+        Server.sharedInstance.cancelDistressSignal()
     }
 }
 
